@@ -2,19 +2,22 @@ $(document).ready(function() {
 
     var playerNumber = 0;
     var theScore = $("#totalNumber");
-    var randomNum = startingRandom();
-    var win;
-    var lose;
+    var randomNum;
+    var urwin;
+    var urlose;
     var crytalRed = 0;
     var crystalBlue = 0;
     var crystalYellow = 0;
     var crystalGreen = 0;
 
     function start() {
-        win=0;
-        lose=0;
+        urwin=0;
+        urlose=0;
+        playerNumber = 0;
+        randomNum = startingRandom();
         
     }
+    start();
     function startingRandom(){
         return Math.floor(Math.random() * 102) + 19;
     }
@@ -23,34 +26,39 @@ $(document).ready(function() {
         crystalBlue = Math.floor(Math.random() * 12) + 1;
         crystalYellow = Math.floor(Math.random() * 12) + 1;
         crystalGreen = Math.floor(Math.random() * 12) + 1;
-        startingRandom();
         $("#compNumber").html("<div> Number to Guess: " + randomNum + "</div>");
 
     }
     function check() {
         if (playerNumber === randomNum) {
             uWin();
+            reset();
             
         } else if (playerNumber > randomNum) {
             uLost();
+            reset();
             
         }
     }
     function reset() {
         setButtons();
+        
     }
     function uWin() {
         alert("You win!")
-        win++;
-        $("#win").html("<div> Wins: " + wins + "</div>");
+        urwin++;
+        $("#win").html("<div> Wins: " + urwin + "</div>");
+        playerNumber = 0;
         reset();
     }
     function uLost() {
         alert("oof, you lost!")
-        lose++;
-        $("#lose").html("<div> Losses: " + lose + "</div>");
+        urlose++;
+        $("#lose").html("<div> Losses: " + urlose + "</div>");
+        playerNumber = 0;
         reset();
     }
+    startingRandom();
     setButtons();
     $("#button1").on("click", function() {
         playerNumber = playerNumber + parseInt(crystalRed);
