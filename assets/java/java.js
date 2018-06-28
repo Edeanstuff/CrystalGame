@@ -41,22 +41,21 @@ $(document).ready(function() {
         }
     }
     function reset() {
+        randomNum = startingRandom();
         setButtons();
+        playerNumber = 0;
+        
         
     }
     function uWin() {
         alert("You win!")
         urwin++;
         $("#win").html("<div> Wins: " + urwin + "</div>");
-        playerNumber = 0;
-        reset();
     }
     function uLost() {
         alert("oof, you lost!")
         urlose++;
         $("#lose").html("<div> Losses: " + urlose + "</div>");
-        playerNumber = 0;
-        reset();
     }
     startingRandom();
     setButtons();
