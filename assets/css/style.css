@@ -1,0 +1,23 @@
+.title {
+    text-align:center;
+    font-size: 50px;
+}
+.rules {
+    text-align:center;
+    font-size:10px;
+    padding: -5vh 5vw 5vw 0vh;
+}
+.rule2 {
+    text-align:center;
+    font-size:15px;
+}
+.buttons {
+    position:relative;
+    left: 43vw;
+    text-align:center;
+}
+.scores {
+    text-align:center;
+}
+.background {
+}

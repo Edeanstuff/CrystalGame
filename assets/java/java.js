@@ -50,12 +50,12 @@ $(document).ready(function() {
     function uWin() {
         alert("You win!")
         urwin++;
-        $("#win").html("<div> Wins: " + urwin + "</div>");
+        $("#win").html("<div>" + urwin + "</div>");
     }
     function uLost() {
         alert("oof, you lost!")
         urlose++;
-        $("#lose").html("<div> Losses: " + urlose + "</div>");
+        $("#lose").html("<div>" + urlose + "</div>");
     }
     startingRandom();
     setButtons();
